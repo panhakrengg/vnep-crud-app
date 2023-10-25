@@ -45,10 +45,10 @@ export default {
       tutorials: [],
       title: '',
       headers: [
-        { text: 'Title', align: 'start', sortable: false, value: 'title' },
-        { text: 'Description', value: 'description', sortable: false },
-        { text: 'Status', value: 'status', sortable: false },
-        { text: 'Actions', value: 'actions', sortable: false },
+        { title: 'Title', align: 'start', key: 'title', sortable: false },
+        { title: 'Description', key: 'description', sortable: false },
+        { title: 'Status', key: 'status', sortable: false },
+        { title: 'Actions', key: 'actions', sortable: false },
       ],
     }
   },
@@ -57,7 +57,7 @@ export default {
       TutorialDataService.getAll()
         .then((response) => {
           this.tutorials = response.data.map(this.getDisplayTutorial)
-          console.log(response.data)
+          console.log(this.tutorials)
         })
         .catch((e) => {
           console.log(e)
